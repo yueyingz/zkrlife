@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.PsDataMapper">
+
+    <insert id="stpremInsert" parameterType="java.util.HashMap">
+        insert into ps_st_prem (edor_no,policy_no,risk_name,ctmoney,created_user,modify_user)
+        values(#{edorNo},#{policyNo},#{riskName},#{ctmoney},'sys' ,'sys')
+    </insert>
+
+    <insert id="addpremInsert" parameterType="java.util.HashMap">
+        insert into ps_addprem_info (edor_no,policy_no,billcode,prod_seq,risk_code,risk_name,addprem,fee,AccountSum,created_user,modify_user)
+        values(#{edorNo},#{policyNo},#{billcode},#{prodSeq},#{riskCode},#{riskCode},#{riskName},#{addprem},#{fee},#{accountSum},'sys' ,'sys')
+    </insert>
+
+    <insert id="importantChangeInsert" parameterType="java.util.HashMap">
+        insert into ps_sync (edor_no,policy_no,name,modify_name,sex,modify_sex,idtype,modify_idtype,id_num,modify_id_num,birthday,modify_birthday,change_role,created_user,modify_user)
+        values(#{edorNo},#{policyNo},#{name},#{modifyName},#{sex},#{modifySex},#{idtype},#{modifyIdtype},#{idnum},#{modifyIdnum},#{birthday},#{modifyBirthday},#{changeRole},'sys' ,'sys')
+    </insert>
+
+</mapper>
